@@ -7,11 +7,11 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=tinyproxy
+PKG_NAME:=tinyproxy-new
 PKG_VERSION:=1.10.0
 PKG_RELEASE:=3
 
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
+PKG_SOURCE:=tinyproxy-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://github.com/tinyproxy/tinyproxy/releases/download/1.10.0/
 PKG_HASH:=a23a8f647f622f01e51b93fa882ea5a15c20e026d45c3aafa81ec579e464daf7
 PKG_MAINTAINER:=Jo-Philipp Wich <jo@mein.io>
@@ -20,7 +20,7 @@ PKG_INSTALL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/tinyproxy
+define Package/tinyproxy-new
   SUBMENU:=Web Servers/Proxies
   SECTION:=net
   CATEGORY:=Network
@@ -48,4 +48,4 @@ define Package/tinyproxy/install
 	$(INSTALL_BIN) ./files/tinyproxy.init $(1)/etc/init.d/tinyproxy
 endef
 
-$(eval $(call BuildPackage,tinyproxy))
+$(eval $(call BuildPackage,tinyproxy-new))
