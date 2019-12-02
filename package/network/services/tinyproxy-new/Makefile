@@ -11,9 +11,10 @@ PKG_NAME:=tinyproxy-new
 PKG_VERSION:=1.10.0
 PKG_RELEASE:=3
 
-PKG_SOURCE:=tinyproxy-$(PKG_VERSION).tar.bz2
-PKG_SOURCE_URL:=https://github.com/tinyproxy/tinyproxy/releases/download/1.10.0/
-PKG_HASH:=a23a8f647f622f01e51b93fa882ea5a15c20e026d45c3aafa81ec579e464daf7
+PKG_SOURCE:=tinyproxy-new-$(PKG_VERSION).tar.bz2
+# The only difference from original: top directory renamed to "tinyproxy-new-VERSION"
+PKG_SOURCE_URL:=https://github.com/shunf4/openwrt-tinyproxy-1.10.0/releases/download/1.10.0/
+PKG_HASH:=3c8bb8063e6e195f589bb5a96835a56085af054e7c0970e64b7a0340ca81316f
 PKG_MAINTAINER:=Jo-Philipp Wich <jo@mein.io>
 
 PKG_INSTALL:=1
@@ -28,7 +29,7 @@ define Package/tinyproxy-new
   URL:=http://tinyproxy.sourceforge.net/
 endef
 
-define Package/tinyproxy/conffiles
+define Package/tinyproxy-new/conffiles
 /etc/config/tinyproxy
 endef
 
@@ -37,7 +38,7 @@ CONFIGURE_ARGS+= \
 	--enable-transparent \
 	--disable-regexcheck \
 
-define Package/tinyproxy/install
+define Package/tinyproxy-new/install
 	$(INSTALL_DIR) $(1)/usr/sbin
 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/tinyproxy $(1)/usr/sbin/
 	$(INSTALL_DIR) $(1)/usr/share/tinyproxy

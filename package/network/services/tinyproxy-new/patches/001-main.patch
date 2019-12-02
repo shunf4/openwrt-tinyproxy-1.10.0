@@ -5,7 +5,8 @@
  	data \
  	etc \
 -	docs \
- 	m4macros \
+-	m4macros \
++	m4macros
 -	tests
  
  # tools want this on a single line
@@ -17,9 +18,10 @@
  	data \
  	etc \
 -	docs \
- 	m4macros \
+-	m4macros \
++	m4macros
 -	tests
- 
+
  
  # tools want this on a single line
 --- a/configure
